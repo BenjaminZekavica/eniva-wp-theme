@@ -1,0 +1,46 @@
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+.container {
+  padding: 0 2em;
+}
+
+body {
+  font-size: 15px;
+  line-height: 1.5;
+  background: $maincolor;
+  color: #3c3c3c;
+  font-family: 'Titillium Web', sans-serif;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+
+  a {
+    color: $maincolor;
+    text-decoration: none;
+    transition: all .3s;
+
+    &:hover {
+      color: $hover;
+    }
+  }
+
+  img {
+      max-width: 100%;
+      height: auto;
+  }
+
+  #wrapper {
+    width: 100%;
+    max-width: 960px;
+    margin: 0 auto;
+    box-shadow: 1px 1px 6px #656565;
+
+    figure.wp-block-image, img {
+        margin: 1.5em 0;
+    }
+  }
+
+}

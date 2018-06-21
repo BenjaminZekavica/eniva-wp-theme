@@ -1,0 +1,43 @@
+footer {
+
+  &.footer-section-outer-wrapper {
+    background-color: $lightbg;
+    color: #333333;
+    padding: 2em 0;
+  }
+
+
+  section.footer-top {
+      margin-bottom: 1em;
+  }
+
+  section.copyright-nav-footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    p.copyright-text {
+      width: 50%;
+    }
+
+    .footer-navi {
+      width: 32%;
+
+      ul {
+        display: flex;
+        justify-content: space-between;
+        flex-wrap: wrap;
+
+        li {
+          list-style: none;
+
+          a {
+            display: block;
+            font-weight: 600; 
+          }
+        }
+      }
+    }
+  }
+
+}
