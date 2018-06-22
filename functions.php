@@ -50,23 +50,116 @@ register_nav_menus( array(
 	 ====================================================== */
 
 
-if ( ! isset( $content_width ) ) {
-	$content_width = 960;
-}
+	// Content Width
 
-add_editor_style()
+	if ( ! isset( $content_width ) ) {
+		$content_width = get_theme_mod('eniva_max_width_wrapper');
+	}
 
-// Image Sizes
-add_image_size( 'full-width-horizontal', 640, 320,true );
+	add_image_size( 'full-width-horizontal', 640, 320,true );
 
 
-// Theme Support
-add_theme_support( 'post-thumbnails' );
-add_theme_support( 'post-thumbnails', array( 'post' ) );
-add_theme_support( 'post-thumbnails', array( 'page' ) );
-add_theme_support( 'post-thumbnails', array( 'post', 'movie' ) );
-add_theme_support( 'title-tag' );
-// add_theme_support( "custom-background");
-// add_theme_support( "custom-header");
-add_theme_support( 'customize-selective-refresh-widgets' );
-add_theme_support( 'html5', array( 'comment-list', 'comment-form', 'search-form', 'gallery', 'caption' ) );
+	 // Register Theme Features
+	function eniva_theme_supports()  {
+
+	 	// Add theme support for Automatic Feed Links
+	 	add_theme_support( 'automatic-feed-links' );
+
+	 	// Add theme support for Post Formats
+	 	add_theme_support( 'post-formats', array( 'status', 'quote', 'gallery', 'image', 'video', 'audio', 'link', 'aside', 'chat' ) );
+
+	 	// Add theme support for Featured Images
+	 	add_theme_support( 'post-thumbnails' );
+
+		// Add Support for BG
+
+		add_theme_support( 'custom-background', array(
+		    'wp-head-callback' => 'envia_custom_bg',
+		    'default-color'    => '2087cc',
+				'default-repeat'         => 'norepeat',
+				'default-position-x'     => 'left',
+				'default-position-y'     => 'top',
+				'default-size'           => 'cover',
+				'default-attachment'     => 'fixed',
+				'admin-head-callback'    => 'envia_custom_bg',
+				'admin-preview-callback' => 'envia_custom_bg'
+		));
+
+		// Output BG Image or Color
+
+		function envia_custom_bg() {
+
+			$background = set_url_scheme( get_background_image() );
+
+					$color = get_background_color();
+
+					if ( $color === get_theme_support( 'custom-background', 'default-color' ) ) {
+							$color = false;
+					}
+
+					if ( ! $background && ! $color )
+							return;
+
+					$style = $color ? "background-color: #$color;" : '';
+
+					if ( $background ) {
+							$image = " background-image: url('$background');";
+
+							$repeat = get_theme_mod( 'background_repeat', get_theme_support( 'custom-background', 'default-repeat' ) );
+							if ( ! in_array( $repeat, array( 'no-repeat', 'repeat-x', 'repeat-y', 'repeat' ) ) )
+									$repeat = 'repeat';
+							$repeat = " background-repeat: $repeat;";
+
+							$position = get_theme_mod( 'background_position_x', get_theme_support( 'custom-background', 'default-position-x' ) );
+							if ( ! in_array( $position, array( 'center', 'right', 'left' ) ) )
+							$position = 'left';
+							$position = " background-position: top $position;";
+
+							$attachment = get_theme_mod( 'background_attachment', get_theme_support( 'custom-background', 'default-attachment' ) );
+							if ( ! in_array( $attachment, array( 'fixed', 'scroll' ) ) )
+									$attachment = 'scroll';
+							$attachment = " background-attachment: $attachment;";
+
+							$style .= $image . $repeat . $position . $attachment;
+					}
+			?>
+			<style type="text/css" id="custom-background-css">
+				body.custom-background {
+					<?php echo trim( $style ); ?>
+				}
+			</style>
+			<?php
+
+		}
+
+
+	 	// Add theme support for Custom Header
+	 	$header_args = array(
+	 		'default-image'          => '',
+	 		'width'                  => 0,
+	 		'height'                 => 0,
+	 		'flex-width'             => false,
+	 		'flex-height'            => false,
+	 		'uploads'                => true,
+	 		'random-default'         => false,
+	 		'header-text'            => false,
+	 		'default-text-color'     => '',
+	 		'wp-head-callback'       => '',
+	 		'admin-head-callback'    => '',
+	 		'admin-preview-callback' => '',
+	 		'video'                  => true,
+	 		'video-active-callback'  => '',
+	 	);
+	 	add_theme_support( 'custom-header', $header_args );
+
+	 	// Add theme support for HTML5 Semantic Markup
+	 	add_theme_support( 'html5', array( 'search-form', 'comment-form', 'comment-list', 'gallery', 'caption' ) );
+
+
+	 	add_theme_support( 'title-tag' );
+
+	 	// Add theme support for Translation
+	 	load_theme_textdomain( 'eniva', get_template_directory() . '/language' );
+	 }
+
+	add_action( 'after_setup_theme', 'eniva_theme_supports' );
