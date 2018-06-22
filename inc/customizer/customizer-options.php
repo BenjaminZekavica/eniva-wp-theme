@@ -3,6 +3,16 @@
 // Customizer for WordPress
 
 
+// Load Range Values
+
+
+if ( class_exists( 'WP_Customize_Control' ) ) {
+
+  require_once __DIR__ . '/frameworks/range-values/class-customizer-range-value-control.php';
+  
+}
+
+
 function eniva_theme_customizer( $wp_customize ) {
 
   // Load Templates

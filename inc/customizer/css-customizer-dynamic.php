@@ -35,9 +35,6 @@
         background: <?php echo $main_color; ?>;
         color: #ffffff;
       }
-      body {
-         background-color: <?php echo $bg_color; ?>;
-      }
 
       /* Wrapper Content */
 

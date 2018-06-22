@@ -5,13 +5,6 @@
 
   $colors = array();
 
-  // BG Color
-  $colors[] = array(
-    'slug'=>'bg_color',
-    'default' => '#2087cc',
-    'label' => __('Background Color', 'eniva')
-  );
-
   // Link Color Static
 
   $colors[] = array(

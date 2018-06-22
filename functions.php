@@ -1,8 +1,7 @@
 <?php
 /*
-		Theme Name: Enivia
-		Author: Benjamin Zekavica
-		Desc: Function of the Theme
+	Theme Name: Enivia
+	Author: Benjamin Zekavica
 */
 
 add_action('after_setup_theme', 'remove_admin_bar');
@@ -33,7 +32,8 @@ add_action( 'wp_enqueue_scripts', 'eniva_theme_enque' );
 	 ====================================================== */
 
 require_once __DIR__ . '/inc/customizer/customizer-options.php';
-
+require_once __DIR__ . '/inc/quick-install/class-tgm-plugin-activation.php';
+require_once __DIR__ . '/inc/quick-install/install-plugins.php';
 
 /* ======================================================
 		3. Register Menu

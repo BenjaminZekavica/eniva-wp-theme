@@ -16,15 +16,18 @@ $wp_customize->add_setting( 'eniva_max_width_wrapper' , array(
     'default' => '960'
 ));
 
-$wp_customize->add_control(
-  'eniva_max_width_wrapper',
-    array(
-      'label'    => __( 'Max-With Container for Boxed Layout (px)', 'eniva' ),
-      'section'  => 'eniva_globals_options',
-      'settings' => 'eniva_max_width_wrapper',
-      'type'     => 'number',
-    )
-);
+$wp_customize->add_control( new Customizer_Range_Value_Control( $wp_customize, 'eniva_max_width_wrapper', array(
+	'type'     => 'range-value',
+  'label'    => __( 'Content With for Boxed Layout (px)', 'eniva' ),
+  'section'  => 'eniva_globals_options',
+  'settings' => 'eniva_max_width_wrapper',
+	'input_attrs' => array(
+		'min'    => 1,
+		'max'    => 2000,
+		'step'   => 1,
+		'suffix' => 'px',
+  	),
+)));
 
 
 
@@ -51,12 +54,15 @@ $wp_customize->add_control(
       'default' => '1200'
   ));
 
-  $wp_customize->add_control(
-    'eniva_container_width_max_width_fluid',
-      array(
-        'label'    => __( 'Max-With Container for Full Width Website (px)', 'eniva' ),
-        'section'  => 'eniva_globals_options',
-        'settings' => 'eniva_container_width_max_width_fluid',
-        'type'     => 'number',
-      )
-  );
+  $wp_customize->add_control( new Customizer_Range_Value_Control( $wp_customize, 'eniva_container_width_max_width_fluid', array(
+  	'type'     => 'range-value',
+    'label'    => __( 'Max-With Container for Full Width Website (px)', 'eniva' ),
+    'section'  => 'eniva_globals_options',
+    'settings' => 'eniva_container_width_max_width_fluid',
+  	'input_attrs' => array(
+  		'min'    => 1,
+  		'max'    => 2000,
+  		'step'   => 1,
+  		'suffix' => 'px',
+    	),
+  )));
