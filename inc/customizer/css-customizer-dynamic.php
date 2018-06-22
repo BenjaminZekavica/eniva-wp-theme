@@ -65,13 +65,12 @@
             body #wrapper {
               max-width: 100%;
               width: 100%;
-              box-shadow: transparent;
+              box-shadow: none;
             }
             .container {
               max-width: '. $max_width_fullwidth_content .'px;
               margin: 0 auto;
             }
-
           ';
           }
       ?>

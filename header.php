@@ -37,23 +37,23 @@
       </header>
       <header class="main-header-outer">
         <div class="main-header-inner-wrapper container">
-          <a class="logo-section" href="<?php echo get_bloginfo('url');?>">
+          <a class="logo-section" href="<?php home_url(); ?>">
 
               <?php
               if ( get_theme_mod( 'your_theme_logo' ) ) : ?>
 
-              <img src="<?php echo get_theme_mod( 'your_theme_logo' ); ?>" alt="<?php echo get_bloginfo('name'); ?>" title="<?php echo get_bloginfo('name'); ?>" class="img-responsive" />
+                <img src="<?php echo get_theme_mod( 'your_theme_logo' ); ?>" alt="<?php echo get_bloginfo('name'); ?>" title="<?php echo get_bloginfo('name'); ?>" class="img-responsive" />
 
               <?php
               else : ?>
 
-              <div class="wp-default-title--block">
-                <h1 class="site-title">
-                  <?php bloginfo( 'name' ); ?>
-                </h1>
-                <p>
-                  <?php bloginfo( 'description' ); ?>
-                </p>
+                <div class="wp-default-title--block">
+                  <h1 class="site-title">
+                    <?php bloginfo( 'name' ); ?>
+                  </h1>
+                  <p>
+                    <?php bloginfo( 'description' ); ?>
+                  </p>
               </div>
 
               <?php endif; ?>
