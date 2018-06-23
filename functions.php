@@ -52,10 +52,23 @@ register_nav_menus( array(
 
 	// Content Width
 
-	if ( ! isset( $content_width ) ) {
-		$content_width = get_theme_mod('eniva_max_width_wrapper');
-	}
 
+	if ( ! isset( $content_width ) )
+	    $content_width = 960;
+
+	function eniva_customizer_content_width_dynamic() {
+	    global $content_width;
+
+	    if ( get_theme_mod('eniva_remove_wrapper') )
+	       $content_width = get_theme_mod('eniva_container_width_max_width_fluid');
+		  elseif ( get_theme_mod('eniva_max_width_wrapper') )
+			   $content_width = get_theme_mod('eniva_max_width_wrapper');
+
+	}
+	add_action( 'template_redirect', 'eniva_customizer_content_width_dynamic' );
+
+
+  // Images
 	add_image_size( 'full-width-horizontal', 640, 320,true );
 
 
@@ -150,7 +163,7 @@ register_nav_menus( array(
 	 		'wp-head-callback'       => '',
 	 		'admin-head-callback'    => '',
 	 		'admin-preview-callback' => '',
-	 		'video'                  => true,
+	 		'video'                  => false,
 	 		'video-active-callback'  => '',
 	 	);
 	 	add_theme_support( 'custom-header', $header_args );

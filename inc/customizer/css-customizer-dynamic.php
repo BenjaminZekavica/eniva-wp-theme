@@ -21,6 +21,11 @@
     $maxwidthboxlayout = get_theme_mod('eniva_max_width_wrapper');
     $footerbgcolor = get_theme_mod('footer_bg_color');
     $footercolor = get_theme_mod('footer_bg_color_text');
+    $mainheaderheigt = get_theme_mod('eniva_main_header_height');
+    $removeboxshadow = get_theme_mod('eniva_remove_box_shadow');
+    $wrappertoleft = get_theme_mod('eniva_box_left');
+    $boxshadowundermainmenu = get_theme_mod('eniva_main_menu_box_shadow');
+    $bgoptions = get_theme_mod('background_image');
 ?>
 
     <style type="text/css">
@@ -38,6 +43,13 @@
 
       /* Wrapper Content */
 
+      body.custom-background {
+          <?php
+            if ( $bgoptions ) { ?>
+              background-color: transparent;
+      <?php } ?>
+      }
+
       body #wrapper {
         background-color: <?php echo $wrapper_content_bg; ?>;
 
@@ -49,7 +61,20 @@
             ';
           }
 
+          if ($removeboxshadow) {
+            echo '
+              box-shadow: none;
+            ';
+          }
+
+          if ($wrappertoleft) {
+            echo '
+              margin: 0;
+            ';
+          }
          ?>
+
+
 
       }
 
@@ -57,7 +82,7 @@
         if ($removewrapper) {
           echo '
             body {
-              background-color: none;
+              background-color: transparent;
             }
             body #wrapper {
               max-width: 100%;
@@ -69,7 +94,7 @@
               margin: 0 auto;
             }
           ';
-          }
+        }
       ?>
 
       /* Link */
@@ -89,18 +114,37 @@
       }
       header.main-header-outer {
         background-color: <?php echo $main_header_color; ?>;
+
+        <?php
+
+          if ($mainheaderheigt) {
+            echo 'height:'. $mainheaderheigt .'px;';
+          }
+
+          if ($boxshadowundermainmenu) {
+            echo '
+              -webkit-box-shadow: 0px 2px 3px #40404057;
+              box-shadow: 0px 2px 3px #40404057;
+              position: relative;
+              top: 0;
+              left: 0;
+            ';
+          }
+
+        ?>
+
       }
-      header.top-header-outer .top-header-inner-wrapper .top-menu ul li a {
+      #wrapper header.top-header-outer .top-header-inner-wrapper .top-menu ul li a {
         font-size: <?php echo $topheaderfontsize; ?>px;
         color: <?php echo $top_header_link_color; ?>;
       }
-      header.top-header-outer .top-header-inner-wrapper .top-menu ul li a:hover{
+      #wrapper header.top-header-outer .top-header-inner-wrapper .top-menu ul li a:hover{
         color: <?php echo $top_header_link_color_hover;?>;
       }
-      header.main-header-outer .main-header-inner-wrapper .logo-section img {
+      #wrapper header.main-header-outer .main-header-inner-wrapper .logo-section img {
         width: <?php echo $logosize; ?>px;
       }
-      header.main-header-outer .main-header-inner-wrapper .main-navigation ul li a {
+      #wrapper header.main-header-outer .main-header-inner-wrapper .main-navigation nav ul li a {
         font-size: <?php echo $eniva_main_menu_font_size; ?>px;
         color: <?php echo $mainmenucolor; ?>;
         <?php

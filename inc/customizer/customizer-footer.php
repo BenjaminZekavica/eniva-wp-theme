@@ -5,7 +5,7 @@
 
   $wp_customize->add_section( 'eniva_footer_options' , array(
       'title'    => __( 'Footer', 'eniva' ),
-      'priority' => 50
+      'priority' => 70
   ) );
 
 

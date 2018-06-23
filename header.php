@@ -36,7 +36,7 @@
       </header>
       <header class="main-header-outer">
         <div class="main-header-inner-wrapper container">
-          <a class="logo-section" href="<?php home_url(); ?>">
+          <a class="logo-section" href="<?php echo get_home_url(); ?>">
 
               <?php
               if ( get_theme_mod( 'your_theme_logo' ) ) : ?>
@@ -47,13 +47,13 @@
               else : ?>
 
                 <div class="wp-default-title--block">
-                  <h1 class="site-title">
-                    <?php bloginfo( 'name' ); ?>
-                  </h1>
-                  <p>
-                    <?php bloginfo( 'description' ); ?>
-                  </p>
-              </div>
+                    <h1 class="site-title">
+                      <?php bloginfo( 'name' ); ?>
+                    </h1>
+                    <p>
+                      <?php bloginfo( 'description' ); ?>
+                    </p>
+                </div>
 
               <?php endif; ?>
 
@@ -70,3 +70,8 @@
           </div>
         </div>
       </header>
+      <?php if ( get_header_image() ) : ?>
+          <div id="site-header">
+            <img src="<?php header_image(); ?>" width="<?php echo absint( get_custom_header()->width ); ?>" height="<?php echo absint( get_custom_header()->height ); ?>" alt="<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>">
+          </div>
+      <?php endif; ?>

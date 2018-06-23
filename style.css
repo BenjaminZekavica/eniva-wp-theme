@@ -1,5 +1,5 @@
 /*!
-Theme Name: Enivia WordPress Theme
+Theme Name: Eniva WordPress Theme
 Theme URI: https://wordpress.org/themes/enivia/
 Author: Benjamin Zekavica
 Author URI: https://benjamin-zekavica.de/
@@ -207,7 +207,7 @@ template {
 body {
   font-size: 15px;
   line-height: 1.5;
-  background: #2087cc;
+  background-color: #2087cc;
   color: #3c3c3c;
   font-family: 'Titillium Web', sans-serif;
   -moz-osx-font-smoothing: grayscale;
@@ -241,6 +241,15 @@ body #wrapper {
 
 body #wrapper figure.wp-block-image, body #wrapper img {
   margin: 1.5em 0;
+}
+
+body #wrapper iframe {
+  width: 100%;
+  margin-bottom: 1.5em;
+}
+
+body #wrapper #site-header img {
+  margin-top: 0;
 }
 
 /* = WordPress Core
@@ -369,9 +378,10 @@ header.top-header-outer {
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
-  -webkit-justify-content: space-around;
-  -ms-flex-pack: distribute;
-  justify-content: space-around;
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
   -webkit-box-align: center;
   -webkit-align-items: center;
   -ms-flex-align: center;
@@ -423,11 +433,16 @@ header.top-header-outer .top-header-inner-wrapper .top-menu ul li {
 header.top-header-outer .top-header-inner-wrapper .top-menu ul li a {
   display: block;
   font-size: 15px;
+  padding: 1em;
+}
+
+header.top-header-outer .top-header-inner-wrapper .top-menu ul li a:last-child {
+  padding-right: 0;
 }
 
 header.main-header-outer {
   width: 100%;
-  min-height: 90px;
+  height: 90px;
 }
 
 header.main-header-outer .main-header-inner-wrapper {
@@ -446,9 +461,8 @@ header.main-header-outer .main-header-inner-wrapper {
   -webkit-flex-wrap: wrap;
   -ms-flex-wrap: wrap;
   flex-wrap: wrap;
-  padding-top: 1em;
-  padding-bottom: 1em;
-  margin-bottom: 2em;
+  width: 100%;
+  height: 100%;
 }
 
 header.main-header-outer .main-header-inner-wrapper .logo-section {
@@ -460,11 +474,24 @@ header.main-header-outer .main-header-inner-wrapper .logo-section img {
 }
 
 header.main-header-outer .main-header-inner-wrapper .main-navigation {
-  width: 65%;
+  width: 68%;
   height: 100%;
 }
 
-header.main-header-outer .main-header-inner-wrapper .main-navigation ul {
+header.main-header-outer .main-header-inner-wrapper .main-navigation nav {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+  -ms-flex-align: center;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+}
+
+header.main-header-outer .main-header-inner-wrapper .main-navigation nav ul {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -480,21 +507,23 @@ header.main-header-outer .main-header-inner-wrapper .main-navigation ul {
   -webkit-flex-wrap: wrap;
   -ms-flex-wrap: wrap;
   flex-wrap: wrap;
+  width: 100%;
+  height: 100%;
 }
 
-header.main-header-outer .main-header-inner-wrapper .main-navigation ul li {
+header.main-header-outer .main-header-inner-wrapper .main-navigation nav ul li {
   list-style: none;
   display: block;
 }
 
-header.main-header-outer .main-header-inner-wrapper .main-navigation ul li a {
+header.main-header-outer .main-header-inner-wrapper .main-navigation nav ul li a {
   display: block;
   font-size: 17px;
   text-transform: uppercase;
   padding: 1em;
 }
 
-header.main-header-outer .main-header-inner-wrapper .main-navigation ul li a:last-child {
+header.main-header-outer .main-header-inner-wrapper .main-navigation nav ul li a:last-child {
   padding-right: 0;
 }
 

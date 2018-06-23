@@ -60,7 +60,7 @@
         $color['slug'], array(
           'default' => $color['default'],
           'type' => 'option',
-          'priority' => 30,
+          'priority' => 50,
           'capability' =>
           'edit_theme_options'
         )

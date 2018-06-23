@@ -5,7 +5,7 @@
     $wp_customize->add_section( 'background_image', array(
         'title'          => __( 'Background Image' ),
         'theme_supports' => 'custom-background',
-        'priority'       => 80,
+        'priority'       => 20,
     ) );
 
     $wp_customize->add_setting( 'background_image', array(

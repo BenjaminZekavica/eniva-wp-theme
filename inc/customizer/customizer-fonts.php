@@ -4,7 +4,7 @@
 
 $wp_customize->add_section( 'eniva_fonts' , array(
     'title'    => __( 'Fonts', 'eniva' ),
-    'priority' => 22
+    'priority' => 40
 ));
 
 $wp_customize->add_setting( 'eniva_fonts' , array(
