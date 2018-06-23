@@ -72,43 +72,31 @@ if( !function_exists('wp_dynamic_css_clear_cache') )
     }
 }
 
-if( !function_exists('wp_dynamic_css_register_filter') )
-{
-    /**
-     * Register a filter function for a given stylesheet handle.
-     *
-     * For example, a registered filter named 'myFilter' can be used in a dynamic
-     * CSS file like so:
-     *
-     * <pre>
-     * body {
-     *     $myVar|myFilter
-     * }
-     * </pre>
-     *
-     * Filters can also accept arguments:
-     *
-     * <pre>
-     * body {
-     *     $myVar|myFilter('1',2,3.4)
-     * }
-     * </pre>
-     *
-     * And can be stacked together:
-     *
-     * <pre>
-     * body {
-     *     $myVar|myFilter1|filter2|filter3
-     * }
-     * </pre>
-     *
-     * @param string $handle The handle of the stylesheet in which this filter
-     * is to be used.
-     * @param string $filter_name The name of the filter to be used in the
-     * dynamic CSS file.
-     * @param Callable $callback The actual filter function. Accepts the $value
-     * as an argument. Should return the filtered value.
-     */
+if( !function_exists('wp_dynamic_css_register_filter') ) {
+
+  $bg_color = get_option('bg_color');
+  $main_color = get_option('main_color');
+  $top_header_color = get_option('top_header_color');
+  $wrapper_content_bg = get_option('wrapper_content_bg');
+  $link_color_static = get_option('link_color_static');
+  $link_color_hover = get_option('link_color_hover');
+  $main_header_color = get_option('main_header_color');
+  $logosize = get_theme_mod( 'eniva_header_options', '169');
+  $topheaderheight = get_theme_mod('eniva_top_header_height', '39');
+  $topheaderfontsize = get_theme_mod('eniva_top_header_menu_font_size', '15');
+  $top_header_link_color = get_theme_mod('top_header_link_color');
+  $top_header_link_color_hover = get_theme_mod('top_header_link_color_hover');
+  $eniva_main_menu_font_size = get_theme_mod('eniva_main_menu_font_size');
+  $mainmenucolor = get_theme_mod('main_header_linkcolor');
+  $mainmenucolorhover = get_theme_mod('main_header_linkcolor_hover');
+  $removewrapper = get_theme_mod('eniva_remove_wrapper');
+  $max_width_fullwidth_content = get_theme_mod('eniva_container_width_max_width_fluid');
+  $maxwidthboxlayout = get_theme_mod('eniva_max_width_wrapper');
+  $footerbgcolor = get_theme_mod('footer_bg_color');
+  $footercolor = get_theme_mod('footer_bg_color_text');
+
+
+
     function wp_dynamic_css_register_filter( $handle, $filter_name, $callback )
     {
         $dcss = DynamicCSSCompiler::get_instance();

@@ -7,12 +7,11 @@
 <!--[if !(IE 7) & !(IE 8)]><!-->
 <!DOCTYPE html>
   <!--[if lt IE 9]>
-    <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
-    <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <script type="text/javascript" src="<?php echo get_template_directory_uri(); ?>/js/html5shiv.js"></script>
+    <script type="text/javascript" src="<?php echo get_template_directory_uri(); ?>/js/respond.js"></script>
   <![endif]-->
 <html <?php language_attributes(); ?> class="no-js">
   <head>
-    <title><?php echo get_bloginfo('name'); ?></title>
     <meta charset="<?php bloginfo( 'charset' ); ?>" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
     <meta name="viewport" content="width=device-width, initial-scale=1"/>

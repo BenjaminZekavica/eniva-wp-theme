@@ -85,6 +85,9 @@ register_nav_menus( array(
 				'admin-preview-callback' => 'envia_custom_bg'
 		));
 
+		// Post Formats
+		add_theme_support( 'post-formats', array( 'aside', 'gallery' ) );
+
 		// Output BG Image or Color
 
 		function envia_custom_bg() {

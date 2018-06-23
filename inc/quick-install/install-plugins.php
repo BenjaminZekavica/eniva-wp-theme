@@ -32,10 +32,24 @@ function eniva_theme_install_plugins() {
 		),
 
 		array(
-			'name'      => 'Ninja Forms – The Easy and Powerful Forms Builder',
+			'name'      => 'Ninja Forms The Easy and Powerful Forms Builder',
 			'slug'      => 'ninja-forms',
 			'required'  => false,
 		),
+
+		array(
+			'name'      => 'Ninja Forms Merge Tag Addon',
+			'slug'      => 'nf-merge-tag-addon',
+			'required'  => false,
+		),
+
+
+		array(
+			'name'      => 'Easy SVG Support',
+			'slug'      => 'easy-svg',
+			'required'  => false,
+		),
+
 
 		array(
 			'name'      => 'Yoast SEO',

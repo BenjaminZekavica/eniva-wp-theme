@@ -8,4 +8,5 @@ Author: Benjamin Zekavica
  Normalize CSS: https://necolas.github.io/normalize.css/
  WP Customiz Toggle Control: https://github.com/soderlind/class-customizer-toggle-control
  WP Customiz.Range Value Control: https://github.com/soderlind/class-customizer-range-value-control
- 
+ HTML5 Shiv
+ respond.js
