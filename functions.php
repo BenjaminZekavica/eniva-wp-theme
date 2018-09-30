@@ -4,20 +4,9 @@
 	Author: Benjamin Zekavica
 */
 
-// add_action('after_setup_theme', 'remove_admin_bar');
-
-// // function remove_admin_bar() {
-// // 	if (!current_user_can('administrator') && !is_admin()) {
-// // 	  show_admin_bar(false);
-// // 	}
-// // }
-
-// // show_admin_bar(false);
-
-
 /* ======================================================
-		1. Enque scripts and styles
-	 ====================================================== */
+	1. Enque scripts and styles
+====================================================== */
 
 function eniva_theme_enque() {
 
@@ -28,16 +17,16 @@ add_action( 'wp_enqueue_scripts', 'eniva_theme_enque' );
 
 
 /* ======================================================
-		2. Load templates - Customizer
-	 ====================================================== */
+	2. Load templates - Customizer
+ ====================================================== */
 
 require_once __DIR__ . '/inc/customizer/customizer-options.php';
 require_once __DIR__ . '/inc/quick-install/class-tgm-plugin-activation.php';
 require_once __DIR__ . '/inc/quick-install/install-plugins.php';
 
 /* ======================================================
-		3. Register Menu
-	 ====================================================== */
+	3. Register Menu
+====================================================== */
 
 register_nav_menus( array(
 	'top_header' => __('Top Header Menu', 'eniva'),
@@ -46,13 +35,11 @@ register_nav_menus( array(
 ));
 
 /* ======================================================
-		4. Theme Support
-	 ====================================================== */
+	4. Theme Support
+====================================================== */
 
 
 	// Content Width
-
-
 	if ( ! isset( $content_width ) )
 	    $content_width = 960;
 
@@ -78,7 +65,12 @@ register_nav_menus( array(
 		add_theme_support( 'automatic-feed-links' ); 
 
 	 	// Add theme support for Featured Images
-	 	add_theme_support( 'post-thumbnails' );
+		 add_theme_support( 'post-thumbnails' );
+		 
+		// Gutenberg Support 
+		 add_theme_support( 'align-wide' );
+		 add_theme_support( 'editor-styles' );
+		 add_theme_support( 'wp-block-styles' );
 
 		// Add Support for BG
 
@@ -171,5 +163,4 @@ register_nav_menus( array(
 	 	// Add theme support for Translation
 	 	load_theme_textdomain( 'eniva', get_template_directory() . '/language' );
 	 }
-
 	add_action( 'after_setup_theme', 'eniva_theme_supports' );
