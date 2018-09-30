@@ -4,15 +4,15 @@
 	Author: Benjamin Zekavica
 */
 
-add_action('after_setup_theme', 'remove_admin_bar');
+// add_action('after_setup_theme', 'remove_admin_bar');
 
-function remove_admin_bar() {
-	if (!current_user_can('administrator') && !is_admin()) {
-	  show_admin_bar(false);
-	}
-}
+// // function remove_admin_bar() {
+// // 	if (!current_user_can('administrator') && !is_admin()) {
+// // 	  show_admin_bar(false);
+// // 	}
+// // }
 
-show_admin_bar(false);
+// // show_admin_bar(false);
 
 
 /* ======================================================
@@ -75,6 +75,8 @@ register_nav_menus( array(
 	 // Register Theme Features
 	function eniva_theme_supports()  {
 
+		add_theme_support( 'automatic-feed-links' ); 
+
 	 	// Add theme support for Featured Images
 	 	add_theme_support( 'post-thumbnails' );
 
@@ -82,7 +84,7 @@ register_nav_menus( array(
 
 		add_theme_support( 'custom-background', array(
 		    'wp-head-callback' => 'envia_custom_bg',
-		    'default-color'    => '2087cc',
+		    'default-color'    => 'eaeaea',
 				'default-repeat'         => 'norepeat',
 				'default-position-x'     => 'left',
 				'default-position-y'     => 'top',
@@ -164,17 +166,7 @@ register_nav_menus( array(
 
 	 	// Add theme support for HTML5 Semantic Markup
 	 	add_theme_support( 'html5', array( 'search-form', 'comment-form', 'comment-list', 'gallery', 'caption' ) );
-
-
-		 add_theme_support( 'title-tag' );
-
-		// Custom BG Color 
-
-		$args = array(
-			'default-color' => 'f7f7f7',
-		);
-		add_theme_support( 'custom-background', $args );
-
+		add_theme_support( 'title-tag' );
 
 	 	// Add theme support for Translation
 	 	load_theme_textdomain( 'eniva', get_template_directory() . '/language' );

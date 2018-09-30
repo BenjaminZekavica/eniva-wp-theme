@@ -1,6 +1,9 @@
 <?php
     // Define Variables
-
+    $contentfontname = get_theme_mod('eniva_content_font_css'); 
+    $headlinefontname = get_theme_mod('eniva_headline_font_css'); 
+    $contentfonturl= get_theme_mod('eniva_headline_font_link'); 
+    $headlinefonturl = get_theme_mod('eniva_content_font_link'); 
     $bg_color = get_option('bg_color');
     $main_color = get_option('main_color');
     $top_header_color = get_option('top_header_color');
@@ -33,7 +36,43 @@
 
     <style type="text/css">
 
+      <?php 
+
+        if($headlinefonturl) {
+          echo "@import url('$headlinefonturl'); ";
+        }else {
+          echo "@import url('https://fonts.googleapis.com/css?family=Titillium+Web'); ";
+        } 
+
+        if($contentfonturl) {
+          echo "@import url('$contentfonturl'); ";
+        }else {
+          echo "@import url('https://fonts.googleapis.com/css?family=Titillium+Web'); ";
+        }
+        
+      ?>
+
       /* Globals */
+
+      body {
+        <?php 
+          if ( $contentfontname ) {
+            echo "font-family: $contentfontname; " ;
+          }else {
+            echo "font-family:'Titillium Web', sans-serif; ";
+          }
+        ?>
+      }
+
+      h1, h2, h3, h4, h5, h6 {
+        <?php 
+          if ( $headlinefontname ) {
+            echo "font-family: $headlinefontname; " ;
+          }else {
+            echo "font-family:'Titillium Web', sans-serif; ";
+          }
+        ?>
+      }
 
       ::selection {
         background: <?php echo $main_color; ?> ;
@@ -166,10 +205,5 @@
         margin-top: <?php echo $footermargintop; ?>px; 
         padding-bottom: <?php echo $footerpaddingbottom; ?>
       }
-
-      footer.footer-section-outer-wrapper a {
-        color: <?php echo $footercolor; ?>;
-      }
-
 
     </style>
