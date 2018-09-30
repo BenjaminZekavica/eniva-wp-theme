@@ -117,11 +117,3 @@ $wp_customize->add_control( new Customizer_Range_Value_Control( $wp_customize, '
 		'suffix' => 'px',
   	),
 )));
-
-
-
-
-
-/* =========================================================
-    Headlines and Content
-   ========================================================= */

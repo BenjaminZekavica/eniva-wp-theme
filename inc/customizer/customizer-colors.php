@@ -32,7 +32,7 @@
 
   $colors[] = array(
     'slug'=>'top_header_color',
-    'default' => '#ffffff',
+    'default' => '#2087cc',
     'label' => __('Top Header Color', 'eniva')
   );
 
@@ -40,7 +40,7 @@
 
   $colors[] = array(
     'slug'=>'main_header_color',
-    'default' => '#ffffff',
+    'default' => '#eff4f2',
     'label' => __('Main Header Color', 'eniva')
   );
 

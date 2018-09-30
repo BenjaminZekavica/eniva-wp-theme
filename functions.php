@@ -75,12 +75,6 @@ register_nav_menus( array(
 	 // Register Theme Features
 	function eniva_theme_supports()  {
 
-	 	// Add theme support for Automatic Feed Links
-	 	add_theme_support( 'automatic-feed-links' );
-
-	 	// Add theme support for Post Formats
-	 	add_theme_support( 'post-formats', array( 'status', 'quote', 'gallery', 'image', 'video', 'audio', 'link', 'aside', 'chat' ) );
-
 	 	// Add theme support for Featured Images
 	 	add_theme_support( 'post-thumbnails' );
 
@@ -172,7 +166,15 @@ register_nav_menus( array(
 	 	add_theme_support( 'html5', array( 'search-form', 'comment-form', 'comment-list', 'gallery', 'caption' ) );
 
 
-	 	add_theme_support( 'title-tag' );
+		 add_theme_support( 'title-tag' );
+
+		// Custom BG Color 
+
+		$args = array(
+			'default-color' => 'f7f7f7',
+		);
+		add_theme_support( 'custom-background', $args );
+
 
 	 	// Add theme support for Translation
 	 	load_theme_textdomain( 'eniva', get_template_directory() . '/language' );

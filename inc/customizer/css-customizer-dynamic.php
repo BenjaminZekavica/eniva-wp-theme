@@ -19,6 +19,9 @@
     $removewrapper = get_theme_mod('eniva_remove_wrapper');
     $max_width_fullwidth_content = get_theme_mod('eniva_container_width_max_width_fluid');
     $maxwidthboxlayout = get_theme_mod('eniva_max_width_wrapper');
+    $footerpaddingtop = get_theme_mod('eniva_footer_padding_top_size');
+    $footerpaddingbottom = get_theme_mod('eniva_footer_padding_bottom_size'); 
+    $footermargintop = get_theme_mod('eniva_footer_margin_size');  
     $footerbgcolor = get_theme_mod('footer_bg_color');
     $footercolor = get_theme_mod('footer_bg_color_text');
     $mainheaderheigt = get_theme_mod('eniva_main_header_height');
@@ -73,9 +76,6 @@
             ';
           }
          ?>
-
-
-
       }
 
       <?php
@@ -162,6 +162,9 @@
       footer.footer-section-outer-wrapper {
         background-color: <?php echo $footerbgcolor; ?>;
         color: <?php echo $footercolor; ?>;
+        padding-top: <?php echo $footerpaddingtop; ?>px; 
+        margin-top: <?php echo $footermargintop; ?>px; 
+        padding-bottom: <?php echo $footerpaddingbottom; ?>
       }
 
       footer.footer-section-outer-wrapper a {

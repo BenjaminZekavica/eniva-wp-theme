@@ -34,8 +34,8 @@ $wp_customize->add_setting( 'eniva_top_header_height' , array(
 
 $wp_customize->add_control( new Customizer_Range_Value_Control( $wp_customize, 'top_header_height', array(
 	'type'     => 'range-value',
-  'section'  => 'eniva_top_header_options',
-  'settings' => 'eniva_top_header_height',
+    'section'  => 'eniva_top_header_options',
+    'settings' => 'eniva_top_header_height',
 	'label'    => __( 'Top Header Height (px)', 'eniva' ),
 	'input_attrs' => array(
 		'min'    => 1,
@@ -45,16 +45,14 @@ $wp_customize->add_control( new Customizer_Range_Value_Control( $wp_customize, '
   	),
 )));
 
-
 // Top Menu Font Size
 
 $wp_customize->add_setting( 'eniva_top_header_menu_font_size' , array(
     'default' => '15'
 ));
 
-
 $wp_customize->add_control( new Customizer_Range_Value_Control( $wp_customize, 'top_header_size', array(
-	'type'     => 'range-value',
+  'type'     => 'range-value',
   'section'  => 'eniva_top_header_options',
   'settings' => 'eniva_top_header_menu_font_size',
 	'label'    => __( 'Top Header Font Size (px)', 'eniva' ),
@@ -152,7 +150,7 @@ $wp_customize->add_control( new Customizer_Range_Value_Control( $wp_customize, '
 // Main Header Height
 
 $wp_customize->add_setting( 'eniva_main_header_height' , array(
-    'default' => '90'
+    'default' => '147'
 ));
 
 

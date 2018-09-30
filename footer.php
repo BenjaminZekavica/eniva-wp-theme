@@ -5,13 +5,11 @@
 				 </section>
 				 <section class="copyright-nav-footer">
 					 	 <p class="copyright-text">
-							  &copy; <?php echo date('Y'); ?>
-
 								<?php
 									if (get_theme_mod('eniva_copyright_text')) {
 										echo get_theme_mod('eniva_copyright_text');
 									}else {
-										echo "test";
+										echo _e('All rights reserved. | Designed by: Benjamin Zekavica | Powered by WordPress', 'eniva'); ;
 									}
 								 ?>
 						 </p>
