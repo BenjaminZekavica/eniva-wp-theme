@@ -22,7 +22,7 @@ function eniva_theme_install_plugins() {
 		array(
 			'name'      => 'Gutenberg',
 			'slug'      => 'gutenberg',
-			'required'  => true,
+			'required'  => false,
 		),
 
 		array(
